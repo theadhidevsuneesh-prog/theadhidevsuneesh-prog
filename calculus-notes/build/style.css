@@ -1,0 +1,226 @@
+/* ===== Fonts (local, from @fontsource) ===== */
+@font-face { font-family: "Lora"; font-weight: 400; font-style: normal; src: url("node_modules/@fontsource/lora/files/lora-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Lora"; font-weight: 400; font-style: italic; src: url("node_modules/@fontsource/lora/files/lora-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Lora"; font-weight: 700; font-style: normal; src: url("node_modules/@fontsource/lora/files/lora-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Lora"; font-weight: 700; font-style: italic; src: url("node_modules/@fontsource/lora/files/lora-latin-700-italic.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 500; src: url("node_modules/@fontsource/poppins/files/poppins-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 600; src: url("node_modules/@fontsource/poppins/files/poppins-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 700; src: url("node_modules/@fontsource/poppins/files/poppins-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Caveat"; font-weight: 600; src: url("node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Caveat"; font-weight: 700; src: url("node_modules/@fontsource/caveat/files/caveat-latin-700-normal.woff2") format("woff2"); }
+
+:root {
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --indigo: #2b2d6e;
+  --teal: #0f9d8a;
+  --amber: #f2a900;
+  --coral: #e4572e;
+  --plum: #8e44ad;
+  --sky: #3b82c4;
+  --green: #2f9e44;
+  --line: #e5e7eb;
+}
+
+@page {
+  size: A4;
+  margin: 17mm 15mm 19mm 15mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Poppins", sans-serif;
+    font-size: 8.5pt;
+    color: var(--muted);
+  }
+  @top-right {
+    content: "Calculus & Linear Algebra  ·  Units I – III";
+    font-family: "Poppins", sans-serif;
+    font-size: 7.5pt;
+    color: #9ca3af;
+    letter-spacing: 0.03em;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: none; }
+  @top-right { content: none; }
+}
+
+* { box-sizing: border-box; }
+html { font-size: 10pt; }
+body {
+  font-family: "Lora", Georgia, serif;
+  color: var(--ink);
+  line-height: 1.52;
+  margin: 0;
+  text-align: left;
+  hyphens: manual;
+  orphans: 3;
+  widows: 3;
+}
+p { margin: 0.55em 0; }
+a { color: inherit; text-decoration: none; }
+strong { color: #111827; }
+em { color: inherit; }
+code { font-family: "DejaVu Sans Mono", monospace; font-size: 0.86em; background: #f3f4f6; padding: 0 3px; border-radius: 3px; }
+
+/* ===== Headings ===== */
+h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.22; color: var(--indigo); break-after: avoid; }
+
+h1 {
+  break-before: page;
+  font-size: 25pt;
+  font-weight: 700;
+  margin: 0 0 14px 0;
+  padding: 22px 0 14px 0;
+  border-bottom: 5px solid var(--indigo);
+  position: relative;
+}
+h1::before {
+  content: attr(data-eyebrow);
+  display: block;
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+h1.u0 { color: var(--indigo); border-color: var(--indigo); }
+h1.u1 { color: #3949ab; border-color: #3949ab; }
+h1.u2 { color: #0b7a6a; border-color: var(--teal); }
+h1.u3 { color: #c2410c; border-color: var(--coral); }
+h1.u9 { color: var(--indigo); border-color: var(--amber); }
+h1.unit-opener { font-size: 34pt; padding-top: 120px; padding-bottom: 20px; border-bottom-width: 8px; }
+h1.nobreak { break-before: auto; }
+
+h2 {
+  font-size: 15pt;
+  font-weight: 600;
+  margin: 26px 0 8px 0;
+  padding-left: 11px;
+  border-left: 6px solid var(--teal);
+}
+.u1sec h2 { border-left-color: #3949ab; }
+h3 { font-size: 11.5pt; font-weight: 600; color: #0b7a6a; margin: 18px 0 4px 0; }
+h4 { font-size: 10pt; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin: 14px 0 2px 0; }
+
+/* ===== Cover ===== */
+.cover {
+  width: 210mm; height: 296.4mm;
+  background: linear-gradient(160deg, #171a52 0%, #2b2d6e 55%, #0f9d8a 130%);
+  color: white;
+  padding: 26mm 20mm;
+  position: relative;
+  break-after: page;
+  overflow: hidden;
+  page-break-after: always;
+}
+.cover .tag { font-family: "Poppins"; font-weight: 600; letter-spacing: 0.3em; font-size: 10pt; text-transform: uppercase; color: #fcd34d; }
+.cover .title { display: block; font-family: "Poppins"; font-weight: 700; font-size: 44pt; line-height: 1.06; margin-top: 18mm; color: white; }
+.cover .subtitle { font-family: "Poppins"; font-weight: 500; font-size: 16pt; margin-top: 10mm; color: #c7d2fe; line-height: 1.4; }
+.cover .formulas { position: absolute; left: 20mm; right: 20mm; bottom: 70mm; font-size: 17pt; color: #e0e7ff; opacity: 0.92; line-height: 2.1; }
+.cover .formulas .katex { color: #e0e7ff; }
+.cover .foot { position: absolute; left: 20mm; right: 20mm; bottom: 22mm; font-family: "Poppins"; font-size: 10pt; color: #a5b4fc; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 6mm; }
+.cover .circle1 { position: absolute; right: -30mm; top: -20mm; width: 110mm; height: 110mm; border-radius: 50%; background: rgba(255,255,255,0.06); }
+.cover .circle2 { position: absolute; right: 10mm; top: 55mm; width: 50mm; height: 50mm; border-radius: 50%; background: rgba(242,169,0,0.18); }
+
+/* ===== TOC ===== */
+.toc { break-before: page; }
+.toc h1 { break-before: auto; }
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0; padding: 0; }
+.toc a { display: flex; align-items: baseline; gap: 6px; padding: 1.5px 0; }
+.toc .t { flex: 0 1 auto; }
+.toc .dots { flex: 1 1 auto; border-bottom: 1.5px dotted #cbd5e1; transform: translateY(-3px); min-width: 12px; }
+.toc .pg { flex: 0 0 auto; font-family: "Poppins"; font-size: 9pt; color: var(--muted); min-width: 22px; text-align: right; }
+.toc li.l1 { margin-top: 12px; font-family: "Poppins"; font-weight: 600; font-size: 11pt; color: var(--indigo); }
+.toc li.l1.u2 { color: #0b7a6a; } .toc li.l1.u3 { color: #c2410c; } .toc li.l1.u1 { color: #3949ab; }
+.toc li.l2 { margin-left: 16px; font-size: 9.3pt; color: #374151; }
+.toc li.l1.unit { margin-top: 18px; font-size: 12pt; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* ===== Boxes (callouts) ===== */
+.box {
+  --c: var(--indigo);
+  --bg: #eef2ff;
+  border: 1.4px solid var(--c);
+  border-left-width: 6px;
+  background: var(--bg);
+  border-radius: 7px;
+  padding: 7px 13px 7px 13px;
+  margin: 12px 0;
+  break-inside: avoid;
+}
+.box > :last-child { margin-bottom: 2px; }
+.box > .bh + * { margin-top: 4px; }
+.bh { display: flex; align-items: center; gap: 8px; margin-bottom: 2px; }
+.bh .chip {
+  font-family: "Poppins"; font-weight: 600; font-size: 7.5pt; letter-spacing: 0.12em; text-transform: uppercase;
+  background: var(--c); color: white; padding: 2px 8px; border-radius: 99px; white-space: nowrap;
+}
+.bh .bt { font-family: "Poppins"; font-weight: 600; font-size: 10pt; color: var(--c); }
+.box.idea   { --c: #0f9d8a; --bg: #ecfdf8; }
+.box.def    { --c: #2b2d6e; --bg: #eef2ff; }
+.box.thm    { --c: #8e44ad; --bg: #f6effb; }
+.box.formula{ --c: #b07d00; --bg: #fff8e1; }
+.box.warn   { --c: #e4572e; --bg: #fff1ec; }
+.box.tip    { --c: #2f9e44; --bg: #ecf9ef; }
+.box.try    { --c: #d6336c; --bg: #fff0f6; }
+.box.recall { --c: #3b82c4; --bg: #eff6fd; }
+.box.mem    { --c: #7c4dff; --bg: #f3efff; }
+.box.proof  { --c: #6b7280; --bg: #f8f9fb; }
+.box.story  { --c: #d98a00; --bg: #fffaf0; font-family: "Caveat", cursive; font-weight: 600; font-size: 13.2pt; line-height: 1.28; }
+.box.story p { margin: 3px 0; }
+.box.story .bh .bt { font-size: 9.5pt; }
+.box.ex     { --c: #475569; --bg: #f8fafc; break-inside: auto; }
+.box.ex .sol { border-top: 1px dashed #cbd5e1; margin-top: 6px; padding-top: 4px; }
+.box.long { break-inside: auto; }
+.box .katex-display { margin: 0.55em 0; }
+
+/* ===== Math ===== */
+.katex { font-size: 1.07em; }
+.katex-display { margin: 0.8em 0; break-inside: avoid; }
+.katex-display > .katex { max-width: 100%; }
+span.math.display { display: block; }
+
+/* ===== Tables ===== */
+table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 9.3pt; break-inside: avoid; }
+th { background: var(--indigo); color: white; font-family: "Poppins"; font-weight: 600; font-size: 8.5pt; padding: 5px 8px; text-align: left; }
+td { padding: 4px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:nth-child(even) td { background: #f8fafc; }
+caption { caption-side: top; text-align: left; font-family: "Poppins"; font-size: 8.5pt; color: var(--muted); padding-bottom: 3px; }
+
+/* ===== Figures ===== */
+figure { margin: 12px auto; text-align: center; break-inside: avoid; }
+figure img { max-width: 100%; height: auto; }
+figcaption { font-family: "Poppins"; font-size: 8pt; color: var(--muted); margin-top: 3px; }
+
+/* ===== Lists ===== */
+ul, ol { margin: 0.45em 0; padding-left: 1.4em; }
+li { margin: 0.18em 0; }
+li > p { margin: 0.15em 0; }
+
+/* ===== Utility ===== */
+.cols2 { column-count: 2; column-gap: 18px; }
+.cols2 > * { break-inside: avoid; }
+.small { font-size: 0.88em; }
+.center { text-align: center; }
+.pb { break-before: page; }
+.note { font-family: "Caveat", cursive; font-weight: 700; font-size: 13.5pt; color: #b45309; }
+.kbd { font-family: "Poppins"; font-weight: 600; font-size: 8.5pt; background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 4px; padding: 0 5px; }
+hr { border: none; border-top: 1px dashed #cbd5e1; margin: 16px 0; }
+.yes { color: #2f9e44; font-weight: 700; }
+.no { color: #e4572e; font-weight: 700; }
+.ans { font-family: "Poppins"; font-weight: 600; color: #0b7a6a; }
+.mcqgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px 14px; font-size: 9.2pt; }
+.mcqgrid > div { padding: 2px 0; border-bottom: 1px dotted var(--line); }
+
+/* unit opener page */
+.opener-sub { font-family: "Poppins"; font-size: 13pt; color: var(--muted); max-width: 140mm; line-height: 1.5; }
+.opener-list { font-family: "Poppins"; font-size: 10.5pt; line-height: 1.9; margin-top: 18px; }
+
+.longtable table { break-inside: auto; }
+.longtable tr { break-inside: avoid; }
+.sol { margin: 4px 0; }
+
+.bh { break-after: avoid; }
+.box > .bh { break-inside: avoid; }
